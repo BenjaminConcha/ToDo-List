@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# ToDo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicación de lista de tareas creada con **React** y **TypeScript**. Permite a los usuarios agregar, editar, eliminar y marcar tareas como completadas, con animaciones suaves y persistencia de datos mediante `localStorage`.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **CRUD de tareas**: Crear, leer, actualizar y eliminar tareas.
+- **Persistencia**: Las tareas se guardan en el navegador usando `localStorage`.
+- **Interfaz moderna**: Estilo responsive con Tailwind CSS.
+- **Animaciones**: Efectos de entrada y salida usando Framer Motion.
 
-## Expanding the ESLint configuration
+## 📦 Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clona el repositorio:
+   git clone https://github.com/BenjaminConcha/ToDo-List.git
 
-- Configure the top-level `parserOptions` property like this:
+2. Navega por la terminal a:
+   cd ToDo-List
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Ejecuta el comando npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+🛠️ Uso
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Ejecuta el servidor de desarrollo:
+npm run dev
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Abre el navegador y visita:
+http://localhost:5173
+
+🏗️ Decisiones de diseño y arquitectura
+
+Los componentes principales (ToDoHeader, ToDoInput, ToDoList, ToDoItem) están diseñados para ser reutilizables y manejan la lógica mínima.
+La lógica central (manejo de estado, persistencia) se encuentra en un custom hook (useToDo).
+
+Persistencia con localStorage:
+Se utiliza localStorage para guardar las tareas localmente, asegurando que permanezcan entre sesiones del navegador.
+
+Animaciones:
+Se usó Framer Motion para lograr transiciones fluidas en la adición y eliminación de tareas, mejorando la experiencia del usuario.
+
+Estilo responsive:
+El diseño se implementó con Tailwind CSS, garantizando una visualización adecuada en dispositivos móviles y de escritorio.
+
+TypeScript:
+Todas las estructuras de datos (como Task) están fuertemente tipadas para evitar errores y mejorar la mantenibilidad.
+
+📄 Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+
+
+
+
+
+   
+   
+
